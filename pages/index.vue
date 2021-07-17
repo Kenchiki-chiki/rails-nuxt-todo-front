@@ -17,7 +17,7 @@
           <v-btn
             color="primary"
             nuxt
-            to="/inspire"
+            to="/tasks"
           >
             Continue
           </v-btn>
