@@ -7,7 +7,7 @@
       </v-card>
       <v-card>
         <v-card-title class="headline">
-          Welcome to Rails × Nuxt ToDo App
+          Welcome to Rails-Nuxt-ToDo-App
         </v-card-title>
         <v-card-text>          
           <hr class="my-3">          
@@ -17,7 +17,7 @@
           <v-btn
             color="primary"
             nuxt
-            to="/inspire"
+            to="/tasks"
           >
             Continue
           </v-btn>
