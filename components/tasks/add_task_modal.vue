@@ -21,10 +21,18 @@
           やるべきことを書き出しましょう。
         </v-card-text>
         <v-text-field
-          v-model="taskName"
+          v-model="taskTitle"
           class="add-task-form"
           type=""
-          label="タスク名"
+          label="タイトル"
+          style=""
+        >
+        </v-text-field>
+        <v-text-field
+          v-model="taskBody"
+          class="add-task-form"
+          type=""
+          label="内容"
           style=""
         >
         </v-text-field>
@@ -43,7 +51,7 @@
           <v-btn
             color="green darken-1"
             text
-            @click="dialog = false"
+            @click="addTask"
           >
             追加
           </v-btn>
@@ -52,17 +60,8 @@
     </v-dialog>
   </v-row>
 
-  
 
 </template>
-
-
-
-
-
-
-
-
 
 
 
@@ -71,12 +70,16 @@ export default {
   data () {
       return {
         dialog: false,
-        taskName: []
+        tasks: [],
+        taskTitle: "",
+        taskBody: ""
       }
     },
     methods: {
       async addTask() {
-        await this.$store.dispatch('task/addTasks', this.taskName)
+        this.tasks.push(...[this.taskTitle,this.taskBody])
+        
+        await this.$store.dispatch('task/addTasks', this.tasks)
         this.dialog = false
         this.taskName = []
         this.fetchTasks()
