@@ -4,10 +4,7 @@ export const state = () => ({
 
 export const actions = {
   async addTasks({ commit }, params) {
-    console.log("===1===")
     const res = await this.$axios.$post('/api/v1/tasks', params)
-    console.log("===2===")
-    console.log(res)
     commit('addTasks', res)
     return {}
   },

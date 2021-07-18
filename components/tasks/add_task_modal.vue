@@ -86,7 +86,7 @@ export default {
         this.fetchTasks()
       },
       async fetchTasks() {
-        await this.$store.dispatch('skill/fetchTasks')
+        await this.$store.dispatch('task/fetchTasks')
       }
     }
 
