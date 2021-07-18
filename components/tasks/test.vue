@@ -1,11 +1,8 @@
 <template>
-  <v-container class="mt-3">
-    <v-data-table
-      :headers="headers"
-      :items="tasks"
-      no-data-text="データがありません。">
-    </v-data-table>
-  </v-container>
+  <div class="task-table">
+      
+    
+  </div>
 </template>
 
 <script>
@@ -17,12 +14,12 @@ export default {
         { text: 'タイトル', value: 'title'},
         { text: '内容', value: 'body' }
       ]
-    } 
+    }
   },
   computed: {
     ...mapGetters({
       tasks: 'task/tasks',
     })
-  }
+  },
 }
 </script>
