@@ -49,7 +49,14 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: process.env.NODE_ENV === "production" ? "" : "http://localhost:8080",
+    proxy: true
+  },
+
+  proxy: {
+    '/api/': 'http://localhost:8080',
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
