@@ -3,22 +3,9 @@ export const state = () => ({
 })
 
 export const actions = {
-  async createTask({ commit }, params) {
-    const url = '/api/v1/tasks'
-    const res = await this.$axios.$post(url, { task: params }).catch(() => {
-      return { errors: ['エラーが発生しました'] }
-    })
-    if (res.errors && res.errors.length !== 0) {
-      return {
-        errors: res.errors
-      }
-    }
-    return {}
-  },
-  
-  async addTasks({ commit }, tasks) {
+  async addTasks({ commit }, params) {
     console.log("===1===")
-    const res = await this.$axios.$post('/api/v1/tasks', tasks)
+    const res = await this.$axios.$post('/api/v1/tasks', params)
     console.log("===2===")
     console.log(res)
     commit('addTasks', res)

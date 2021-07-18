@@ -70,16 +70,17 @@ export default {
   data () {
       return {
         dialog: false,
-        tasks: [],
         taskTitle: "",
         taskBody: ""
       }
     },
     methods: {
       async addTask() {
-        this.tasks.push(...[this.taskTitle,this.taskBody])
-        
-        await this.$store.dispatch('task/addTasks', this.tasks)
+        const params = {
+        title: this.taskTitle,
+        body: this.taskBody
+      }
+        await this.$store.dispatch('task/addTasks', params)
         this.dialog = false
         this.taskName = []
         this.fetchTasks()
