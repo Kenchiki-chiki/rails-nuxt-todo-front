@@ -23,6 +23,14 @@ export default {
     ...mapGetters({
       tasks: 'task/tasks',
     })
+  },
+  created() {
+    this.fetchTasks()
+  },
+  methods: {
+    async fetchTasks() {
+      await this.$store.dispatch('task/fetchTasks')
+    }
   }
 }
 </script>
