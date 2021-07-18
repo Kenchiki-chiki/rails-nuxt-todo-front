@@ -11,7 +11,11 @@ $ yarn add nuxt or $ npm install nuxt
 ## 起動
 
 ```
-$ yarn dev or $ npm run dev
+// nuxtをyarn経由でインストールした場合は以下で起動
+$ yarn dev
+
+// nuxtをnpm経由でインストールした場合は以下で起動
+$ npm run dev
 ```
 
 ## 匿名でデータの収集をして良いか質問されるので、YesならY、Noならnを入力してEnterを押す
