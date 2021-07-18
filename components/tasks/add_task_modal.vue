@@ -1,7 +1,7 @@
 <template>
   <v-row justify="center">
     <v-btn
-      color="primary"
+      color="green darken-1"
       dark
       @click.stop="dialog = true"
     >
