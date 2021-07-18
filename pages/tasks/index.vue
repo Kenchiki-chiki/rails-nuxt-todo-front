@@ -1,43 +1,17 @@
 <template>
   <v-container>
     <AddTaskBtn />
-    <p>{{ headers }}</p>
-    
-    
-
+    <TaskIndex />
   </v-container>
-  
-  
-
 </template>
 
-
-
-
-
-
-
-
-
-
-
 <script>
-import { mapGetters } from 'vuex'
 import AddTaskBtn from '~/components/tasks/add_task_modal'
+import TaskIndex from '~/components/tasks/task_index'
 export default {
   components: {
-    AddTaskBtn
-  },
-  data() {
-    return {
-      tasks: [],
-    }
-  },
-  computed: {
-    ...mapGetters({
-      headers: 'task/tasks',
-    })
-  },
-
+    AddTaskBtn,
+    TaskIndex
+  }
 }
 </script>
