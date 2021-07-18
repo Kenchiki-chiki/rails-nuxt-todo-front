@@ -59,11 +59,7 @@
       </v-card>
     </v-dialog>
   </v-row>
-
-
 </template>
-
-
 
 <script>
 export default {
@@ -74,24 +70,22 @@ export default {
         taskBody: ""
       }
     },
-    methods: {
-      async addTask() {
-        const params = {
-        title: this.taskTitle,
-        body: this.taskBody
-      }
-        await this.$store.dispatch('task/addTasks', params)
-        this.dialog = false
-        this.taskName = []
-        this.fetchTasks()
-      },
-      async fetchTasks() {
-        await this.$store.dispatch('task/fetchTasks')
-      }
+  methods: {
+    async addTask() {
+      const params = {
+      title: this.taskTitle,
+      body: this.taskBody
     }
-
+      await this.$store.dispatch('task/addTasks', params)
+      this.dialog = false
+      this.taskName = []
+      this.fetchTasks()
+    },
+    async fetchTasks() {
+      await this.$store.dispatch('task/fetchTasks')
+    }
+  }
 }
-
 </script>
 
 <style>
@@ -99,5 +93,4 @@ export default {
   width: 230px;
   margin: 0 auto;
 }
-
 </style>
