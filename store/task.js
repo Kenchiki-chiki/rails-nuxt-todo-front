@@ -5,7 +5,6 @@ export const state = () => ({
 export const actions = {
   async addTasks({ commit }, params) {
     const res = await this.$axios.$post('/api/v1/tasks', params)
-    commit('addTasks', res)
     return {}
   },
   async fetchTasks({ commit }) {
@@ -16,14 +15,9 @@ export const actions = {
 }
 
 export const mutations = {
-  addTasks(state, saveTask) {
-    const tasks = state.tasks.concat(saveTask)
-    state.tasks =tasks
-  },
   setTasks(state, payload) {
     state.tasks = []
-    const tasks = state.tasks.concat(payload)
-    state.tasks = tasks
+    state.tasks = state.tasks.concat(payload)
   }
 }
 

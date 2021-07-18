@@ -78,7 +78,6 @@ export default {
     }
       await this.$store.dispatch('task/addTasks', params)
       this.dialog = false
-      this.taskName = []
       this.fetchTasks()
     },
     async fetchTasks() {
